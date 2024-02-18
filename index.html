@@ -1,1 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeasin Ali - Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            animation: slideInDown 1s ease-in-out;
+        }
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        header h1 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+        header p {
+            color: #666;
+        }
+        section {
+            margin-bottom: 30px;
+            animation: slideInLeft 1s ease-in-out;
+        }
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .skills {
+            margin-top: 20px;
+        }
+        .skills li:before {
+            content: "💻 ";
+            margin-right: 5px;
+        }
+        footer {
+            text-align: center;
+            color: #666;
+            animation: slideInUp 1s ease-in-out;
+        }
+        @keyframes slideInUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Md. Yeasin Ali</h1>
+            <p>Mechanical Engineering Student | Web Developer Enthusiast</p>
+        </header>
+        <section>
+            <h2>Skills</h2>
+            <ul class="skills">
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Vue</li>
+                <li>Angular JS</li>
+                <li>HTML/CSS</li>
+                <li>Mechanical Engineering concepts</li>
+            </ul>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <ul id="project-list">
+                <!-- Project list will be dynamically populated by JavaScript -->
+            </ul>
+        </section>
+        <footer>
+            <p>&copy; 2024 Md. Yeasin Ali - Portfolio</p>
+        </footer>
+    </div>
 
+    <script>
+        // Sample project data (you can replace it with your own data)
+        const projectsData = [
+            { name: "Project 1", description: "Description of Project 1" },
+            { name: "Project 2", description: "Description of Project 2" },
+            { name: "Project 3", description: "Description of Project 3" }
+        ];
+
+        // Function to dynamically populate project list
+        function populateProjects() {
+            const projectList = document.getElementById('project-list');
+            projectsData.forEach(project => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `<strong>${project.name}</strong>: ${project.description}`;
+                projectList.appendChild(listItem);
+            });
+        }
+
+        // Call the function to populate projects when the DOM is loaded
+        document.addEventListener('DOMContentLoaded', populateProjects);
+    </script>
+</body>
+</html>
